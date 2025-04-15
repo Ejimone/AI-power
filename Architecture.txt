@@ -39,3 +39,47 @@ Data Flow:
    - Call: Initiates a call using LiveKit, with the frontend managing the interface.
    - Chat: Generates a response with the LLM, converts it to speech with TTS, and sends it to the frontend.
 6. Frontend updates the user interface with the results.
+
+
+
+
+project-root/
+├── backend/
+│ ├── app/
+│ │ ├── api/
+│ │ │ ├── endpoints/
+│ │ │ │ ├── voice.py # Voice input processing
+│ │ │ │ ├── email.py # Email functionality
+│ │ │ │ ├── call.py # Call management
+│ │ │ │ └── chat.py # Chat functionality
+│ │ │ └── deps.py # API dependencies
+│ │ ├── core/
+│ │ │ ├── config.py # Configuration for STT, TTS, LLMs
+│ │ │ ├── stt.py # STT service integration
+│ │ │ ├── tts.py # TTS service integration
+│ │ │ ├── llm.py # LLM integration
+│ │ │ └── intent.py # Intent recognition logic
+│ │ ├── services/
+│ │ │ ├── gmail_service.py # Gmail API integration
+│ │ │ └── livekit_service.py # LiveKit integration
+│ │ └── main.py # FastAPI entry point
+│ ├── tests/ # Unit and integration tests
+│ └── requirements.txt # Python dependencies
+├── frontend/
+│ ├── public/ # Static files
+│ ├── src/
+│ │ ├── components/
+│ │ │ ├── VoiceCapture.js # Voice input component
+│ │ │ ├── EmailPopup.js # Editable email popup
+│ │ │ ├── CallInterface.js # LiveKit call interface
+│ │ │ └── ChatInterface.js # Chat interface
+│ │ ├── services/
+│ │ │ └── api.js # Backend API client
+│ │ ├── App.js # Main React component
+│ │ └── index.js # React entry point
+│ ├── package.json # Node.js dependencies
+│ └── .env # Frontend environment variables
+├── credentials.json # Gmail API credentials
+├── README.md # Project documentation
+├── architecture.txt # Architecture details
+└── appflow.txt # Application flow details
