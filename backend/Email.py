@@ -1,0 +1,1 @@
+# for email services, like sending emails, creating drafts
