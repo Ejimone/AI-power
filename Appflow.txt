@@ -1,0 +1,37 @@
+Application Flow
+----------------
+
+1. User Interaction:
+   - User accesses the React web application.
+   - Interacts primarily via voice commands.
+
+2. Voice Capture:
+   - Frontend captures voice input using the browser's microphone API.
+   - Sends the audio data to the backend via an API request.
+
+3. STT Conversion:
+   - Backend processes the audio with the configured STT service (ElevenLabs, Cartesia, or Deepgram).
+   - Converts the voice input into text.
+
+4. Intent Recognition:
+   - Backend analyzes the text using the configured LLM (Gemini or OpenAI) to determine the user's intent (e.g., send email, book call, chat).
+
+5. Action Execution:
+   - Send Email:
+     - LLM generates email content based on the voice command.
+     - Backend sends the content to the frontend.
+     - Frontend displays an editable popup with the email content.
+     - User edits and confirms the email.
+     - Frontend sends the finalized email back to the backend.
+     - Backend uses Gmail API to send the email.
+   - Book Call:
+     - Backend initiates a call using LiveKit.
+     - Frontend renders the call interface.
+     - Voice interactions during the call are processed with STT and TTS as needed.
+   - Chat with Customers:
+     - LLM generates a text response to the user's input.
+     - Backend converts the response to speech using the configured TTS service.
+     - Frontend plays the speech back to the user.
+
+6. Configuration Switching:
+   - Update `backend/app/core/config.py` to switch between STT, TTS, or LLM providers (e.g., from ElevenLabs to Deepgram, or Gemini to OpenAI).
