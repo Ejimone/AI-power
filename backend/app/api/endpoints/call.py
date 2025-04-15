@@ -17,7 +17,6 @@ from livekit.agents import (
     llm,
 )
 from livekit.protocol import sip as proto_sip
-from livekit.agents.multimodal import MultimodalAgent
 from livekit.plugins import openai
 
 
@@ -164,10 +163,9 @@ class PhoneAssistant:
         )
 
         # Create and start the multimodal agent
-        self.assistant = MultimodalAgent(model=self.model)
-        self.assistant.start(self.context.room, participant)
+      
 
-        # Greeting with menu options. This is the first thing the assistant says to the user.
+        # Greeting with menu coptions. This is the first thing the assistant says to the user.
         # You don't need to have a greeting, but it's a good idea to have one if calls are incoming.
         greeting = (
             "Hi, thanks for calling Vandelay Industries — global leader in fine latex goods!"
