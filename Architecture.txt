@@ -55,10 +55,10 @@ project-root/
 │ │ │ └── deps.py # API dependencies
 │ │ ├── core/
 │ │ │ ├── config.py # Configuration for STT, TTS, LLMs
-│ │ │ ├── stt.py # STT service integration
-│ │ │ ├── tts.py # TTS service integration
-│ │ │ ├── llm.py # LLM integration
-│ │ │ └── intent.py # Intent recognition logic
+|  !!     │ │ │ ├── stt() # STT service integration
+|  !!     │ │ │ ├── tts() # TTS service integration
+|  !!     │ │ │ ├── llm() # LLM integration
+|  !!     │ │ │ └── intent() # Intent recognition logic
 │ │ ├── services/
 │ │ │ ├── gmail_service.py # Gmail API integration
 │ │ │ └── livekit_service.py # LiveKit integration
