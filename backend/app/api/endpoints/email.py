@@ -1,10 +1,16 @@
 from googleapiclient.discovery import build 
-from gauth import *
+import gauth
 import logging
 import base64
 import traceback
 from email.mime.text import MIMEText
 from typing import Tuple
+import json
+import os
+
+
+# Define the path to the credentials file relative to Email.py
+CREDENTIALS_FILE_PATH = os.path.join(os.path.dirname(__file__), 'credentials.json.json')
 
 
 class GmailService():
@@ -382,3 +388,7 @@ class GmailService():
             logging.error(f"Error retrieving attachment {attachment_id} from message {message_id}: {str(e)}")
             logging.error(traceback.format_exc())
             return None
+        
+
+# Utility functions to use GmailService for common email operations
+
