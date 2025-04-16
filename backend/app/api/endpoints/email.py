@@ -1,5 +1,5 @@
 from googleapiclient.discovery import build 
-from . import gauth
+from gauth import *
 import logging
 import base64
 import traceback
